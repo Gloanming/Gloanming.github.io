@@ -83,6 +83,12 @@
         <content type="html"><![CDATA[<pre><code>//// Created by 24873 on 2022/10/18.//#include &lt;iostream&gt;using namespace std;int size = 0;typedef struct node &#123;    int val;    struct node* next;    struct node* pre;&#125;node, deque;deque* Deque;node* head;node* rear;void pushBack(int val) &#123;    node *new_node;    new_node = (node*) malloc(sizeof (node));    if (new_node == nullptr) &#123;        perror(&quot;malloc fail\n&quot;);    &#125;    new_node -&gt; val = val;    if (head == nullptr) &#123;        head = new_node;        head-&gt;pre = nullptr;        rear = new_node;    &#125; else &#123;        rear-&gt;next = new_node;        new_node-&gt;pre = rear;        rear = new_node;    &#125;    rear-&gt;next = nullptr;&#125;void pushFront(int val) &#123;    node* new_node;    new_node = (node*) malloc(sizeof(node));    if (new_node == nullptr) &#123;        perror(&quot;malloc error\n&quot;);    &#125;    new_node-&gt;val = val;    if (head == nullptr) &#123;        head = new_node;        rear = new_node;        rear -&gt; next = nullptr;    &#125; else &#123;        head-&gt;pre = new_node;        new_node-&gt;next = head;        head = new_node;    &#125;    head-&gt;pre = nullptr;&#125;void popBack() &#123;    node* Node;    Node = (node*) malloc(sizeof (node));    if (Node == NULL) &#123;        perror(&quot;malloc error\n&quot;);    &#125;    if (rear)&#123;        cout &lt;&lt; rear-&gt;val &lt;&lt;endl;    &#125; else &#123;        cout &lt;&lt; -1 &lt;&lt; endl;        return;    &#125;    if (rear -&gt; pre) &#123;        Node = rear-&gt;pre;        Node-&gt;next = nullptr;        free(rear);        rear = Node;    &#125; else &#123;        head = nullptr;        rear = nullptr;    &#125;&#125;void popFront() &#123;    node* Node;    Node = (node*) malloc(sizeof (node));    if (Node == nullptr) &#123;        perror(&quot;malloc fail\n&quot;);    &#125;    if (head)&#123;        cout &lt;&lt; head-&gt;val&lt;&lt;endl;    &#125; else &#123;        cout &lt;&lt; -1 &lt;&lt;endl;        return;    &#125;    if (head-&gt;next) &#123;        Node = head-&gt;next;        Node-&gt;pre = nullptr;        free(head);        head = Node;    &#125; else &#123;        head = nullptr;        rear = nullptr;    &#125;&#125;int main() &#123;    int n;    cin &gt;&gt; n;    for (int i = 0; i &lt; n; i++) &#123;        string cmd;        cin &gt;&gt; cmd;        if (cmd == &quot;pushFront&quot;) &#123;            int val;            cin &gt;&gt; val;            pushFront(val);            size++;        &#125;else if (cmd == &quot;pushBack&quot;) &#123;            int val;            cin &gt;&gt; val;            pushBack(val);            size++;        &#125;else if (cmd == &quot;popFront&quot;) &#123;            popFront();            size--;        &#125;else if (cmd == &quot;popBack&quot;) &#123;            popBack();            size--;        &#125;else if (cmd == &quot;getSize&quot;) &#123;            if (size &gt;= 0)                cout &lt;&lt; size &lt;&lt; endl;        &#125;    &#125;&#125;</code></pre>]]></content>
       
       
+      <categories>
+          
+          <category> 生活杂记 </category>
+          
+      </categories>
+      
       
     </entry>
     
@@ -95,6 +101,12 @@
       
         <content type="html"><![CDATA[<h2 id="c"><a href="#c" class="headerlink" title="c++"></a>c++</h2><p>下午终于写完了 c++的作业，题目不是很难但是还是总出 bug。</p><h2 id="LIFE"><a href="#LIFE" class="headerlink" title="LIFE"></a>LIFE</h2><p>也许是昨天没有休息好加上有一点忙碌，嗓子又开始不舒服了，真无语住了….<br>没吃晚饭好饿….</p><h2 id="SONGS"><a href="#SONGS" class="headerlink" title="SONGS"></a>SONGS</h2><p>觉得自己听懂探心者这首歌了，怕亲密之后又走散</p><h2 id="NEXT"><a href="#NEXT" class="headerlink" title="NEXT"></a>NEXT</h2><p>之后要开始写线代作业了啊啊啊啊<br>周末好像还是要去鼓楼迎新，好烦好烦 ╮（╯＿╰）╭</p><h2 id="TOTAL"><a href="#TOTAL" class="headerlink" title="TOTAL"></a>TOTAL</h2><pre><code class="c++">class behavior &#123;    public:        void sleep();        behavior();        ~behavior();        void doHomework();        void listen();    private:        void pain();        int emoStatus;&#125;</code></pre>]]></content>
       
+      
+      <categories>
+          
+          <category> 生活杂记 </category>
+          
+      </categories>
       
       
     </entry>
