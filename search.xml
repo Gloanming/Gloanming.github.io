@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>解决Gradle构建速度问题</title>
+      <link href="/posts/49255/"/>
+      <url>/posts/49255/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Gradle-构建加速"><a href="#Gradle-构建加速" class="headerlink" title="Gradle 构建加速"></a>Gradle 构建加速</h1><h2 id="1-配置-Gradle-环境"><a href="#1-配置-Gradle-环境" class="headerlink" title="1. 配置 Gradle 环境"></a>1. 配置 Gradle 环境</h2><p>在官网下载 <strong>bin</strong> 文件</p><ul><li>配置 %GRADLE_HOME% ：将 gradle-bin 中的 bin 文件夹所在目录添加上</li><li>修改 Path ：新建 <strong><code>%GRADLE_HOME%\bin</code></strong></li></ul><p>验证：cmd 输入 gradle -version</p><h2 id="2-修改-gradle-下载地址"><a href="#2-修改-gradle-下载地址" class="headerlink" title="2. 修改 gradle 下载地址"></a>2. 修改 gradle 下载地址</h2><p>在 gradle 项目中，找到 gradle 目录，下面的 gradle-wrapper.properties</p><p><img src="https://s2.loli.net/2023/07/16/WQDlf9garE4Yp3T.png" alt="image-20230716165933539"></p><p>修改其中的<strong>distributionUrl</strong> 为你的本地地址</p><p><img src="https://s2.loli.net/2023/07/16/nW1N9rMsY3JoyA8.png" alt="image-20230716170004400"></p><h2 id="3-修改镜像仓库"><a href="#3-修改镜像仓库" class="headerlink" title="3. 修改镜像仓库"></a>3. 修改镜像仓库</h2><p>由于 gradle 各种插件依赖的仓库在国外，如果使用官方的镜像仓库下载速度会特别慢，修改仓库为阿里云的仓库</p><p>在 settings.gradle 或者 build.gradle 中加入 ：</p><pre><code>maven&#123; url &#39;https://maven.aliyun.com/nexus/content/groups/public/&#39;&#125;</code></pre><p><img src="https://s2.loli.net/2023/07/16/3GYmCSIyVqDPnWc.png" alt="image-20230716170711280"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 生活杂记 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>证券投资学</title>
       <link href="/posts/1/"/>
       <url>/posts/1/</url>
@@ -49,6 +68,32 @@
       <url>/posts/16107/</url>
       
         <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;</code></pre><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server</code></pre><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate</code></pre><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy</code></pre><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Linklist</title>
+      <link href="/posts/32568/"/>
+      <url>/posts/32568/</url>
+      
+        <content type="html"><![CDATA[<pre><code>//// Created by 24873 on 2022/10/18.//#include &lt;iostream&gt;using namespace std;int size = 0;typedef struct node &#123;    int val;    struct node* next;    struct node* pre;&#125;node, deque;deque* Deque;node* head;node* rear;void pushBack(int val) &#123;    node *new_node;    new_node = (node*) malloc(sizeof (node));    if (new_node == nullptr) &#123;        perror(&quot;malloc fail\n&quot;);    &#125;    new_node -&gt; val = val;    if (head == nullptr) &#123;        head = new_node;        head-&gt;pre = nullptr;        rear = new_node;    &#125; else &#123;        rear-&gt;next = new_node;        new_node-&gt;pre = rear;        rear = new_node;    &#125;    rear-&gt;next = nullptr;&#125;void pushFront(int val) &#123;    node* new_node;    new_node = (node*) malloc(sizeof(node));    if (new_node == nullptr) &#123;        perror(&quot;malloc error\n&quot;);    &#125;    new_node-&gt;val = val;    if (head == nullptr) &#123;        head = new_node;        rear = new_node;        rear -&gt; next = nullptr;    &#125; else &#123;        head-&gt;pre = new_node;        new_node-&gt;next = head;        head = new_node;    &#125;    head-&gt;pre = nullptr;&#125;void popBack() &#123;    node* Node;    Node = (node*) malloc(sizeof (node));    if (Node == NULL) &#123;        perror(&quot;malloc error\n&quot;);    &#125;    if (rear)&#123;        cout &lt;&lt; rear-&gt;val &lt;&lt;endl;    &#125; else &#123;        cout &lt;&lt; -1 &lt;&lt; endl;        return;    &#125;    if (rear -&gt; pre) &#123;        Node = rear-&gt;pre;        Node-&gt;next = nullptr;        free(rear);        rear = Node;    &#125; else &#123;        head = nullptr;        rear = nullptr;    &#125;&#125;void popFront() &#123;    node* Node;    Node = (node*) malloc(sizeof (node));    if (Node == nullptr) &#123;        perror(&quot;malloc fail\n&quot;);    &#125;    if (head)&#123;        cout &lt;&lt; head-&gt;val&lt;&lt;endl;    &#125; else &#123;        cout &lt;&lt; -1 &lt;&lt;endl;        return;    &#125;    if (head-&gt;next) &#123;        Node = head-&gt;next;        Node-&gt;pre = nullptr;        free(head);        head = Node;    &#125; else &#123;        head = nullptr;        rear = nullptr;    &#125;&#125;int main() &#123;    int n;    cin &gt;&gt; n;    for (int i = 0; i &lt; n; i++) &#123;        string cmd;        cin &gt;&gt; cmd;        if (cmd == &quot;pushFront&quot;) &#123;            int val;            cin &gt;&gt; val;            pushFront(val);            size++;        &#125;else if (cmd == &quot;pushBack&quot;) &#123;            int val;            cin &gt;&gt; val;            pushBack(val);            size++;        &#125;else if (cmd == &quot;popFront&quot;) &#123;            popFront();            size--;        &#125;else if (cmd == &quot;popBack&quot;) &#123;            popBack();            size--;        &#125;else if (cmd == &quot;getSize&quot;) &#123;            if (size &gt;= 0)                cout &lt;&lt; size &lt;&lt; endl;        &#125;    &#125;&#125;</code></pre>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>first blood of c++</title>
+      <link href="/posts/31356/"/>
+      <url>/posts/31356/</url>
+      
+        <content type="html"><![CDATA[<h2 id="c"><a href="#c" class="headerlink" title="c++"></a>c++</h2><p>下午终于写完了 c++的作业，题目不是很难但是还是总出 bug。</p><h2 id="LIFE"><a href="#LIFE" class="headerlink" title="LIFE"></a>LIFE</h2><p>也许是昨天没有休息好加上有一点忙碌，嗓子又开始不舒服了，真无语住了….<br>没吃晚饭好饿….</p><h2 id="SONGS"><a href="#SONGS" class="headerlink" title="SONGS"></a>SONGS</h2><p>觉得自己听懂探心者这首歌了，怕亲密之后又走散</p><h2 id="NEXT"><a href="#NEXT" class="headerlink" title="NEXT"></a>NEXT</h2><p>之后要开始写线代作业了啊啊啊啊<br>周末好像还是要去鼓楼迎新，好烦好烦 ╮（╯＿╰）╭</p><h2 id="TOTAL"><a href="#TOTAL" class="headerlink" title="TOTAL"></a>TOTAL</h2><pre><code class="c++">class behavior &#123;    public:        void sleep();        behavior();        ~behavior();        void doHomework();        void listen();    private:        void pain();        int emoStatus;&#125;</code></pre>]]></content>
       
       
       
